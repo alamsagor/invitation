@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sagor & Arifa | Wedding Invitation</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/Untitled-1.png" type="image/gif"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;
+      font-family: 'Inter', sans-serif;
+      color: #2e2a28;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* elegant container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* hero / cover section */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(145deg, #fff6ef 0%, #f9ede3 100%);
+      border-radius: 0 0 4rem 4rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "✦";
+      font-size: 18rem;
+      color: rgba(210, 180, 140, 0.08);
+      position: absolute;
+      bottom: -5rem;
+      right: -4rem;
+      font-family: serif;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "✧";
+      font-size: 12rem;
+      color: rgba(210, 180, 140, 0.08);
+      position: absolute;
+      top: 2rem;
+      left: -2rem;
+      font-family: serif;
+      pointer-events: none;
+    }
+
+    .invitation-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(2px);
+      padding: 2.8rem 2rem;
+      border-radius: 48px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 245, 235, 0.9);
+    }
+
+    .subhead {
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #b47c5e;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .names {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #3c2a23;
+      margin: 0.5rem 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .wedding-date {
+      font-size: 1.2rem;
+      background: #fff3ea;
+      display: inline-block;
+      padding: 0.4rem 1.6rem;
+      border-radius: 60px;
+      margin: 1.2rem 0 1rem;
+      font-weight: 500;
+      color: #9b6a4c;
+    }
+
+    .divider {
+      width: 70px;
+      height: 2px;
+      background: #e2cfbc;
+      margin: 1.8rem auto;
+    }
+
+    .invite-text {
+      font-size: 1.05rem;
+      color: #4a3b34;
+      max-width: 480px;
+      margin: 1rem auto;
+      line-height: 1.5;
+    }
+
+    .btn-rsvp {
+      display: inline-block;
+      background: #9e7b61;
+      color: white;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1.8rem;
+      transition: all 0.25s ease;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+
+    .btn-rsvp:hover {
+      background: #7f5f48;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -8px rgba(128, 78, 48, 0.3);
+    }
+
+    /* details section */
+    .details-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0 4rem;
+    }
+
+    .info-card {
+      background: white;
+      flex: 1;
+      min-width: 230px;
+      padding: 2rem 1.8rem;
+      border-radius: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s;
+      border: 1px solid #f0e2d8;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      border-color: #e6cfc0;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #3c2a23;
+    }
+
+    .info-card p {
+      color: #6b5a50;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .story-section {
+      background: #fffaf5;
+      border-radius: 2rem;
+      padding: 2.5rem 2rem;
+      margin: 2rem 0 3rem;
+      text-align: center;
+    }
+
+    .story-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .story-text {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4e3f38;
+      line-height: 1.6;
+    }
+
+    /* gallery (simple) */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+
+    .gallery-item {
+      background: #e9ddd2;
+      width: 140px;
+      height: 140px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: #f7ede5;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+      transition: 0.2s;
+      font-weight: 300;
+    }
+
+    .gallery-item span {
+      font-size: 2.8rem;
+      opacity: 0.75;
+    }
+
+    /* rsvp modal & form */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(30, 20, 15, 0.7);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fffdf9;
+      max-width: 500px;
+      width: 90%;
+      padding: 2rem 1.8rem;
+      border-radius: 2rem;
+      position: relative;
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+      border: 1px solid #f3e4da;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 1.2rem;
+      top: 1rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #b68b6e;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+      color: #5f4a3c;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #e2cfc2;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #b98f72;
+      box-shadow: 0 0 0 2px rgba(185, 143, 114, 0.2);
+    }
+
+    .submit-rsvp {
+      background: #9e7b61;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .submit-rsvp:hover {
+      background: #7f5f48;
+    }
+
+    .confirmation-message {
+      background: #e9dfd7;
+      border-radius: 2rem;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      display: none;
+      color: #2e5c3e;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #f0e2d8;
+      color: #8f786a;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 680px) {
+      .names {
+        font-size: 2.5rem;
+      }
+      .invitation-card {
+        padding: 1.8rem;
+      }
+      .hero {
+        min-height: 70vh;
+      }
+      .gallery-item {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="invitation-card">
+    <div class="subhead">We cordinall request the honor o your gracious presences and blessings at the Wedding Ceremony of
+</div>
+    <div class="names">Alam Sagor<br>&<br>Arifa Mubarak</div>
+    <div class="wedding-date">Friday, 15 May 2026. Time- 13:00</div>
+    <div class="divider"></div>
+    <div class="invite-text">
+      Together with joyful hearts, we invite you to celebrate our love as we exchange vows and begin our forever.
+    </div>
+    <button class="btn-rsvp" id="openRsvpBtn">KINDLY RSVP →</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- event details -->
+  <div class="details-grid">
+    <div class="info-card">
+      <div class="info-icon">🗓️</div>
+      <h3>Mehedi Ceremony</h3>
+      <p>Thursday, May 14, 2026<br>6:00 PM – 02:00 AM</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <h3>Adar Community Center</h3>
+      <p>Gomdandi Fultol, Arkan Road,<br>Boalkhali, Chottogram</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💌</div>
+      <h3>Saying</h3>
+      <p>In the name of Almighty Alah, the most <br>Gracious the most Mercifuld</p>
+    </div>
+  </div>
+
+  <!-- love story -->
+  <div class="story-section">
+    <h2>Wedding Invitation</h2>
+    <div class="story-text">
+      <p>Do you remember those days, when we all used to talk about who will get married first and who will be the last? Well, unfortunately, I am the first one! And you have to be there by my side to make the wedding day super special.</p>
+      <p style="margin-top: 1rem;">— Sagor & Arifa</p>
+    </div>
+  </div>
+
+  <!-- simple gallery (decorative) -->
+  <div class="gallery">
+    <div class="gallery-item"><span>🌿</span></div>
+    <div class="gallery-item"><span>💍</span></div>
+    <div class="gallery-item"><span>🥂</span></div>
+    <div class="gallery-item"><span>🌸</span></div>
+    <div class="gallery-item"><span>📸</span></div>
+  </div>
+
+  <div style="text-align: center; margin: 2rem 0 0;">
+    <p style="font-style: italic; color:#9b7b66;">“Love is the closest thing we have to magic.”</p>
+  </div>
+</div>
+
+<footer>
+  <p>Sagor & Arifa — 14.05.2026 — Please join us for an evening of love, dinner, and dancing</p>
+  <p style="margin-top: 0.5rem;">✧ digital invitation by Alam Sagor ✧</p>
+</footer>
+
+<!-- RSVP Modal -->
+<div id="rsvpModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeModalBtn">&times;</span>
+    <h2>RSVP to our celebration</h2>
+    <p style="margin-bottom: 1.2rem;">We'd love to know if you can make it!</p>
+    <form id="rsvpForm">
+      <div class="form-group">
+        <label>Full name *</label>
+        <input type="text" id="guestName" placeholder="e.g., Alam Sagor" required>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" id="guestEmail" placeholder="hello@example.com">
+      </div>
+      <div class="form-group">
+        <label>Attendance *</label>
+        <select id="attendance" required>
+          <option value="" disabled selected>— Select option —</option>
+          <option value="joyfully accepts">🎉 Joyfully accepts</option>
+          <option value="declines with regret">💔 Declines with regret</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Number of guests (including you)</label>
+        <input type="number" id="guestCount" min="1" max="4" value="1">
+      </div>
+      <div class="form-group">
+        <label>Dietary notes / song request</label>
+        <input type="text" id="specialRequests" placeholder="Optional">
+      </div>
+      <button type="submit" class="submit-rsvp">Send RSVP</button>
+      <div id="formConfirmation" class="confirmation-message"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Get modal elements
+  const modal = document.getElementById('rsvpModal');
+  const openBtn = document.getElementById('openRsvpBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const rsvpForm = document.getElementById('rsvpForm');
+  const confirmationDiv = document.getElementById('formConfirmation');
+
+  // open modal
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // reset confirmation message if previously visible
+    confirmationDiv.style.display = 'none';
+    confirmationDiv.innerHTML = '';
+    // reset form fields (optional but good)
+    // but we keep gentle - only reset inner text/errors? we'll reset style.
+    rsvpForm.reset(); 
+  });
+
+  // close modal function
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // handle RSVP submission (client-side demo, with local storage simulation)
+  rsvpForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // gather data
+    const fullName = document.getElementById('guestName').value.trim();
+    const attendanceVal = document.getElementById('attendance').value;
+    const guestCount = document.getElementById('guestCount').value;
+    const email = document.getElementById('guestEmail').value.trim();
+    const special = document.getElementById('specialRequests').value;
+
+    if (!fullName) {
+      showTemporaryMessage('Please enter your name.', '#b1624b');
+      return;
+    }
+    if (!attendanceVal) {
+      showTemporaryMessage('Please select attendance status.', '#b1624b');
+      return;
+    }
+    if (guestCount < 1) {
+      showTemporaryMessage('Number of guests must be at least 1.', '#b1624b');
+      return;
+    }
+
+    // create a rsvp object (mock save)
+    const rsvpData = {
+      name: fullName,
+      email: email || 'not provided',
+      attendance: attendanceVal,
+      totalGuests: guestCount,
+      requests: special || '—',
+      timestamp: new Date().toLocaleString()
+    };
+
+    // Simulate saving to localStorage or console
+    let existing = localStorage.getItem('wedding_rsvps');
+    let rsvpsArray = existing ? JSON.parse(existing) : [];
+    rsvpsArray.push(rsvpData);
+    localStorage.setItem('wedding_rsvps', JSON.stringify(rsvpsArray));
+
+    // show beautiful confirmation
+    const acceptMessage = attendanceVal === 'joyfully accepts' 
+      ? `✨ Wonderful, ${fullName}! We can’t wait to celebrate with you${guestCount > 1 ? ` and your ${parseInt(guestCount)-1} guest(s).` : '.'} ✨`
+      : `💛 We're sorry you can't make it, ${fullName}. You'll be in our hearts. 💛`;
+
+    confirmationDiv.style.display = 'block';
+    confirmationDiv.innerHTML = `${acceptMessage}<br><span style="font-size:0.8rem;">Thanks for your response! We’ve recorded your RSVP.</span>`;
+    confirmationDiv.style.background = "#e7dfd4";
+    confirmationDiv.style.color = "#4a3b32";
+
+    // optional: clear some fields but keep them readable
+    // but we don't reset entire form so user can see their submission.
+    // disable submit for 2 secs? just for UX, but we keep.
+    const submitBtn = document.querySelector('.submit-rsvp');
+    submitBtn.disabled = true;
+    setTimeout(() => {
+      submitBtn.disabled = false;
+    }, 2000);
+
+    // after 3 secs, we could close modal? but we let user close manually, or auto close if preferred
+    // but better let user close, but we also give a "close" suggestion. we'll keep open to show message.
+    // Also log to console for demonstration
+    console.log('RSVP saved:', rsvpData);
+  });
+
+  function showTemporaryMessage(msg, colorHex = '#b1624b') {
+    confirmationDiv.style.display = 'block';
+    confirmationDiv.style.background = "#fce9e2";
+    confirmationDiv.style.color = colorHex;
+    confirmationDiv.innerHTML = msg;
+    setTimeout(() => {
+      if (confirmationDiv.innerHTML === msg) {
+        confirmationDiv.style.display = 'none';
+      }
+    }, 2500);
+  }
+
+  // optional prefill / small stylistic effect: add a nice hover on gallery? not needed.
+  // also avoid form reset on page reload? no problem.
+  // For demo purposes, if you want to show that localStorage has data, but not needed.
+  // also add small smooth anchor? everything is ready.
+</script>
+</body>
+</html>
